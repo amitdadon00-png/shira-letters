@@ -191,7 +191,7 @@ function updateIndex() {
 </head>
 <body>
     <h1>לשירה ♥</h1>
-    <div class="sub">מכתבי אהבה מאמיט</div>
+    <div class="sub">מכתבי אהבה מעמית</div>
     <ul>
 ${items}
     </ul>
@@ -261,7 +261,7 @@ async function main() {
     const tpl  = readFileSync(TEMPLATE, 'utf8');
     const html = tpl
         .replace('__OG_TITLE__',          'מכתב לשירה ♥')
-        .replace('__OG_DESCRIPTION__',    `מכתב אהבה מאמיט · ${dStr}`)
+        .replace('__OG_DESCRIPTION__',    `מכתב אהבה מעמית · ${dStr}`)
         .replace('__OG_IMAGE__',          ogImg)
         .replace('__PAGE_TITLE__',        'מכתב לשירה ♥')
         .replace('__PHOTO_SECTION__',          photoHtml)
