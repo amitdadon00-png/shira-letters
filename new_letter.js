@@ -63,15 +63,14 @@ function buildAudio(raw) {
         const m = s.match(pat);
         if (m) {
             const vid = m[1];
+            const url = `https://youtu.be/${vid}`;
             return `
     <div class="audio-section">
         <div class="audio-label">♪ שיר במיוחד בשבילך</div>
-        <div class="youtube-wrapper">
-            <iframe src="https://www.youtube.com/embed/${vid}?rel=0&modestbranding=1"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-        </div>
+        <a href="${url}" target="_blank" rel="noopener" class="play-btn">
+            <span class="play-icon">▶</span>
+            <span>לחץ לנגן</span>
+        </a>
     </div>`;
         }
     }
