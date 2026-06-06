@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- WhatsApp / Social preview -->
+    <meta property="og:title" content="מכתב לשירה ♥">
+    <meta property="og:description" content="מכתב אהבה מאמיט · 7 ביוני 2026">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>מכתב לשירה ♥</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:     #fce8ee;
+            --card:   #ffffff;
+            --rose:   #c05070;
+            --rose-d: #8b2a42;
+            --gold:   #c4913a;
+            --text:   #1a0a0f;
+            --text-b: #3d1828;
+            --soft:   #9b6070;
+            --pad: clamp(22px, 6vw, 44px);
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% 0%,   rgba(192,80,112,.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 50% 100%, rgba(139,42,66,.08)  0%, transparent 60%);
+            font-family: 'Heebo', 'Arial Hebrew', sans-serif;
+            color: var(--text);
+            padding: 28px 12px 56px;
+        }
+
+        /* ── Card ── */
+        .card {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow:
+                0 2px 4px  rgba(0,0,0,.05),
+                0 8px 24px rgba(139,42,66,.12),
+                0 24px 56px rgba(0,0,0,.08);
+            animation: riseIn .85s cubic-bezier(.22,1,.36,1) both;
+        }
+
+        @keyframes riseIn {
+            from { opacity: 0; transform: translateY(22px) scale(.985); }
+            to   { opacity: 1; transform: translateY(0)    scale(1);    }
+        }
+
+        /* ── Top band ── */
+        .top-band {
+            height: 8px;
+            background: linear-gradient(90deg, var(--rose-d) 0%, var(--rose) 50%, var(--rose-d) 100%);
+        }
+
+        /* ── Heart hero ── */
+        .heart-section {
+            padding: 36px var(--pad) 12px;
+            text-align: center;
+        }
+
+        .heart {
+            font-size: clamp(52px, 14vw, 72px);
+            line-height: 1;
+            display: inline-block;
+            animation: heartbeat 2.4s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1);    }
+            14%      { transform: scale(1.12); }
+            28%      { transform: scale(1);    }
+            42%      { transform: scale(1.07); }
+            56%      { transform: scale(1);    }
+        }
+
+        /* ── Divider ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 16px var(--pad) 22px;
+        }
+        .divider-line {
+            flex: 1; height: 1px;
+            background: linear-gradient(to left, var(--gold), transparent);
+            opacity: .55;
+        }
+        .divider-line.r {
+            background: linear-gradient(to right, var(--gold), transparent);
+        }
+        .divider-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: .65;
+            margin: 0 12px;
+        }
+
+        /* ── Photo ── */
+        .photo-wrapper {
+            text-align: center;
+            padding: 0 var(--pad) 24px;
+            animation: riseIn .85s .1s cubic-bezier(.22,1,.36,1) both;
+        }
+        .photo-wrapper img {
+            width: min(200px, 52%);
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow:
+                0 0 0 2px var(--rose),
+                0 0 0 6px rgba(192,80,112,.15),
+                0 8px 24px rgba(139,42,66,.20);
+        }
+
+        /* ── Letter body ── */
+        .body {
+            padding: 0 var(--pad) 28px;
+            animation: riseIn .85s .18s cubic-bezier(.22,1,.36,1) both;
+        }
+
+        .body p {
+            font-size: clamp(1.05rem, 3.2vw, 1.18rem);
+            line-height: 1.85;
+            color: var(--text-b);
+            font-weight: 300;
+            margin-bottom: 1.4em;
+        }
+
+        /* First paragraph — greeting — gets bold rose treatment */
+        .body p:first-child {
+            font-weight: 700;
+            color: var(--rose-d);
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+        }
+
+        .body p:last-child { margin-bottom: 0; }
+
+        /* ── Featured phrase ── */
+        .featured {
+            margin: 8px var(--pad) 28px;
+            padding: 20px var(--pad);
+            text-align: center;
+            border-top: 1px solid rgba(192,80,112,.15);
+            border-bottom: 1px solid rgba(192,80,112,.15);
+            animation: riseIn .85s .25s cubic-bezier(.22,1,.36,1) both;
+        }
+        .featured-text {
+            font-family: 'Heebo', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.15rem, 4vw, 1.35rem);
+            color: var(--rose);
+            line-height: 1.55;
+        }
+
+        /* ── Audio ── */
+        .audio-section {
+            padding: 0 var(--pad) 28px;
+            animation: riseIn .85s .3s cubic-bezier(.22,1,.36,1) both;
+        }
+        .audio-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--soft);
+            font-size: .9rem;
+            text-align: center;
+            margin-bottom: 14px;
+            letter-spacing: .06em;
+        }
+        .youtube-wrapper {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,.12);
+        }
+        .youtube-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .spotify-embed         { width: 100%; height: 80px; border-radius: 12px; }
+        .audio-player          { width: 100%; accent-color: var(--rose); }
+
+        /* ── Stars footer ── */
+        .stars-section {
+            padding: 4px var(--pad) 22px;
+            text-align: center;
+            animation: riseIn .85s .35s cubic-bezier(.22,1,.36,1) both;
+        }
+        .stars {
+            font-size: 1rem;
+            color: var(--gold);
+            letter-spacing: 10px;
+            opacity: .75;
+        }
+
+        /* ── Date ── */
+        .date-line {
+            text-align: center;
+            padding-bottom: 28px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: .85rem;
+            color: var(--soft);
+            letter-spacing: .06em;
+            animation: riseIn .85s .38s cubic-bezier(.22,1,.36,1) both;
+        }
+
+        /* ── Bottom band ── */
+        .bottom-band {
+            height: 8px;
+            background: linear-gradient(90deg, var(--rose-d) 0%, var(--rose) 50%, var(--rose-d) 100%);
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 440px) {
+            body { padding: 0 0 40px; }
+            .card { border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+
+    <div class="top-band"></div>
+
+    <div class="heart-section">
+        <div class="heart">❤️</div>
+    </div>
+
+    <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line r"></div>
+    </div>
+
+    
+
+    <div class="body">
+        <p>יפה שלי,</p>
+            <p>בשבוע האחרון לא יצא לנו לדבר המון ואמרתי שאכתוב לך משהו במקום.<br>אני גאה בך, גאה בדרך שלך ובהישגיות שלך.<br>השבוע התגעגעתי כל כך והבנתי כמה חסרה לי שאת לא כאן.</p>
+            <p>אני אוהב אותך בלי סוף ולא יכול לחכות שתחזרי.</p>
+    </div>
+
+    
+    <div class="featured">
+        <div class="featured-text">שרוף עלייך לב ליבי ❤️</div>
+    </div>
+
+    
+
+    <div class="stars-section">
+        <div class="stars">✦ ✦ ✦ ✦</div>
+    </div>
+
+    <div class="date-line">7 ביוני 2026</div>
+
+    <div class="bottom-band"></div>
+
+</div>
+</body>
+</html>
+
